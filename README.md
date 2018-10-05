@@ -25,7 +25,7 @@ into frameworks like libevent.
 To run this example, you'll want one machine to be the proxy, and another to
 be the client. On the proxy:
 * Set up DHCP, giving the proxy itself out as a default gateway.
-* `sudo iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 80 -m tcp \
+* `sudo iptables -t mangle -A PREROUTING -i eth0 -p tcp --dport 80 -m tcp
           -j TPROXY --on-ip 192.168.123.1 --on-port 1234 --tproxy-mark 1/1`
 * `sudo sysctl -w net.ipv4.ip_forward=1`
 * `sudo ip rule add fwmark 1/1 table 1`
